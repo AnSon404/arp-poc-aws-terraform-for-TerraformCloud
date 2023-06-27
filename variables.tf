@@ -21,3 +21,6 @@ variable "vpc_cidr" {
   type        = string
   default     = "172.16.0.0/16" # changed
 }
+
+variable "aws_access_key_id" {}
+variable "aws_secret_access_key" {}
