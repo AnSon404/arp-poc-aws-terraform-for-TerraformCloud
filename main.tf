@@ -539,13 +539,14 @@ module "security_group" {
 # VPC and Subnets
 #---------------------------------------------------------------
 module "vpc" {
-  source  = "terraform-aws-modules/vpc/aws"
-  version = "~> 3.0"
+  source  = "./modules/terraform-aws-vpc" # "terraform-aws-modules/vpc/aws"
+  # version = "~> 3.0"
 
   name = local.name
   cidr = local.vpc_cidr
 
   azs                       = local.azs
+  map_public_ip_on_launch   = true
   public_subnets            = ["172.16.0.0/24", "172.16.1.0/24"] 
   elasticache_subnet_suffix = "file"
   elasticache_subnets       = ["172.16.3.0/24", "172.16.4.0/24", "172.16.5.0/24"]
