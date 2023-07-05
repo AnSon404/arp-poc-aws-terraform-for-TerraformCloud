@@ -445,8 +445,8 @@ resource "kubectl_manifest" "efs_pvc" {
 #---------------------------------------------------------------
 
 module "efs" {
-  source  = "terraform-aws-modules/efs/aws"
-  version = "~> 1.0"
+  source  = "./modules/terraform-aws-efs"
+  # version = "~> 1.0"
 
   creation_token = "${local.name}-efs" 
   name           = "${local.name}-efs" 
