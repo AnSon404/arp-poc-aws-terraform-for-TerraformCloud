@@ -290,7 +290,7 @@ module "db" {
 }
 
 module "airflow_s3_bucket" {
-  source  = "terraform-aws-modules/s3-bucket/aws"
+  source  = "./modules/terraform-aws-s3-bucket"
   version = "~> 3.0"
 
   bucket = "${local.name}-airflow-logs-${data.aws_caller_identity.current.account_id}" 
@@ -539,7 +539,7 @@ module "security_group" {
 # VPC and Subnets
 #---------------------------------------------------------------
 module "vpc" {
-  source  = "./modules/terraform-aws-vpc" # "terraform-aws-modules/vpc/aws"
+  source  = "./modules/terraform-aws-vpc"
   # version = "~> 3.0"
 
   name = local.name
