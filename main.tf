@@ -232,8 +232,8 @@ module "eks_blueprints_kubernetes_addons" {
 # RDS Postgres Database for Apache Airflow Metadata
 #---------------------------------------------------------------
 module "db" {
-  source  = "terraform-aws-modules/rds/aws"
-  version = "~> 5.0"
+  source  = "./modules/terraform-aws-rds"
+  # version = "~> 5.0"
 
   identifier = "${local.name}-${local.airflow_name}-postgres" 
 
