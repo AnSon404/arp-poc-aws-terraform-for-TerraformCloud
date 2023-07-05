@@ -291,7 +291,7 @@ module "db" {
 
 module "airflow_s3_bucket" {
   source  = "./modules/terraform-aws-s3-bucket"
-  version = "~> 3.0"
+  # version = "~> 3.0"
 
   bucket = "${local.name}-airflow-logs-${data.aws_caller_identity.current.account_id}" 
   acl    = "private"
