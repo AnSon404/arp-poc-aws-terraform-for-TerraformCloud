@@ -515,8 +515,8 @@ data "aws_iam_policy_document" "airflow_s3_logs" {
 # PostgreSQL RDS security group
 #---------------------------------------------------------------
 module "security_group" {
-  source  = "terraform-aws-modules/security-group/aws"
-  version = "~> 4.0"
+  source  = "./modules/terraform-aws-security-group"
+  # version = "~> 4.0"
 
   name        = "${local.name}-airflow-postgres-sg" 
   description = "Complete PostgreSQL example security group"
