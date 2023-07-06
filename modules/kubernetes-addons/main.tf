@@ -423,8 +423,8 @@ module "strimzi_kafka_operator" {
 }
 
 module "sysdig_agent" {
-  source  = "sysdiglabs/sysdig-addon/eksblueprints"
-  version = "0.0.1"
+  source  = "./terraform-eksblueprints-sysdig-addon"
+  # version = "0.0.1"
 
   count         = var.enable_sysdig_agent ? 1 : 0
   helm_config   = var.sysdig_agent_helm_config

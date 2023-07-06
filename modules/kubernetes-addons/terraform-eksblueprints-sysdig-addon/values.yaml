@@ -1,0 +1,9 @@
+agent:
+  sysdig:
+    settings:
+      collector_port: 6443
+nodeAnalyzer:
+  nodeAnalyzer:
+    secure:
+      vulnerabilityManagement:
+        newEngineOnly: true
