@@ -347,8 +347,7 @@ module "metrics_server" {
 }
 
 module "ondat" {
-  source  = "ondat/ondat-addon/eksblueprints"
-  version = "0.1.2"
+  source  = "./terraform-eksblueprints-ondat-addon"
 
   count = var.enable_ondat ? 1 : 0
 
