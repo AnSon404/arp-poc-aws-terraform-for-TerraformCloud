@@ -373,8 +373,7 @@ module "kube_prometheus_stack" {
 
 module "portworx" {
   count         = var.enable_portworx ? 1 : 0
-  source        = "portworx/portworx-addon/eksblueprints"
-  version       = "0.0.6"
+  source        = "./terraform-eksblueprints-portworx-addon"
   helm_config   = var.portworx_helm_config
   addon_context = local.addon_context
 }
